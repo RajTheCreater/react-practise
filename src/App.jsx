@@ -1,18 +1,20 @@
 
-import { useState } from 'react'
 import './App.css'
-import User from './User'
+import Product from './components/Product'
+import Items from './components/Items'
 function App() {
-
-  const [counter, setCounter] = useState(0)
+  const obj = {
+    ram: "8 GB",
+    rom: "128 GB",
+    processor: "i9"
+  }
   return (
     <>
       <h1>Code step by step</h1>
-      <h1>Counter val: {counter}</h1>
-      <User />
-      <button onClick={() => setCounter(counter + 1)}>
-        Increase Counter Value
-      </button>
+      <Items />
+      <Product name="Iphone 17" price="30000" color="White" data={obj} />
+      <Product name="Samsung 26 Ulra" price="32000" color="Black" data={obj} />
+      <Product name="Motorola" price="15000" color="Red" data={obj} />
     </>
   )
 }
