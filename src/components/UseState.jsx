@@ -14,8 +14,8 @@ const UzeState = () => {
     return (
         <>
             <h1>Counter ={counter}</h1>
-            <button onClick={increase} >increase</button>
-            <button onClick={decrease} >decrease</button>
+            <button  type="button" className="btn btn-primary" onClick={increase} >increase</button>
+            <button  type="button" className="btn btn-primary" onClick={decrease} >decrease</button>
         </>
     )
 }

@@ -23,11 +23,11 @@ const Events = () => {
         <>
             <div>Events</div>
             <h1>Counter = {count}</h1>
-            <button onClick={showAlert}>Click</button>
+            <button  type="button" class="btn btn-primary" onClick={showAlert}>Click</button>
             <div>
-                <button onClick={bg_light}>Change to Light</button>
-                <button onClick={bg_dark}>Change to Dark</button>
-                <button onClick={() => counter(20)}>Count value</button>
+                <button  type="button" class="btn btn-primary" onClick={bg_light}>Change to Light</button>
+                <button  type="button" class="btn btn-primary" onClick={bg_dark}>Change to Dark</button>
+                <button  type="button" class="btn btn-primary" onClick={() => counter(20)}>Count value</button>
             </div>
         </>
     )
