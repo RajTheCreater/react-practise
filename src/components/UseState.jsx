@@ -1,8 +1,8 @@
-import React, { useState }  from 'react'
+import   { useState }  from 'react'
 
 const UzeState = () => {
     // let counter = 0;
-    const [counter, setCounter] = useState(0)
+    const [counter, setCounter] = useState(10)
     const increase = () => { 
         setCounter(counter+1);
         console.log(counter);
