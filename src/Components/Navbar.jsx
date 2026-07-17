@@ -27,6 +27,13 @@ const Navbar = () => {
                     borderRadius: "5px",
                     textDecoration: "none",
                 })} to={'/contact'}>Contact</NavLink>
+                <NavLink style={({ isActive }) => ({
+                    color: isActive ? "white" : "blue",
+                    backgroundColor: isActive ? "green" : "transparent",
+                    padding: "5px 10px",
+                    borderRadius: "5px",
+                    textDecoration: "none",
+                })} to={'/user'}>User</NavLink>
             </div>
         </>
     )
