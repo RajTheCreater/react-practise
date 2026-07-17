@@ -4,14 +4,14 @@ import Home from './Pages/Home'
 import About from './Pages/About'
 import Contact from './Pages/Contact'
 import Dynamic_User from './Pages/Dynamic_User'
-import Navbar from './Components/Navbar'
+import Nav from './Components/Nav'
 import User from './Pages/User'
 
 const App = () => {
   return (
     <>
       <Router>
-        <Navbar />
+        <Nav  />
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/home' element={<Home />} />
