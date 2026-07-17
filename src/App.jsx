@@ -1,6 +1,7 @@
 
 import './App.css'
-import FetchData from './components/FetchData'
+// import FetchData from './components/FetchData'
+import Form_Handling from './components/Form_Handling'
 // import UseEffect from './components/UseEffect'
 // import UseState from './components/UseState' 
 // import Map from './components/Map' 
@@ -15,7 +16,8 @@ function App() {
   return (
     <>
       <div className="container-fluid">
-      <FetchData />
+        <Form_Handling />
+        {/* <FetchData /> */}
         {/* <UseEffect /> */}
         {/* <Filter /> */}
         {/* <Map /> */}
