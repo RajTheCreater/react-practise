@@ -1,28 +1,55 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Home from './Pages/Home'
-import About from './Pages/About'
-import Contact from './Pages/Contact'
-import Dynamic_User from './Pages/Dynamic_User'
-import Nav from './Components/Nav'
-import User from './Pages/User'
+import Home from './Components/Home'
+import About from './Components/About'
+import Products from './Components/Products'
+import Profile from './Components/Profile'
+import { createBrowserRouter,
+   RouterProvider, Link, Outlet } from
+  "react-router-dom";
 
-const App = () => {
+async function githubProfileLoader() {
+  const res = await fetch("https://api.github.com/users/RahulKKushwaha");
+  if (!res.ok) throw new Error("Failed to fetch GitHub profile");
+  return res.json();
+}
+function Layout() {
   return (
-    <>
-      <Router>
-        <Nav  />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/home' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/contact' element={<Contact />} />
-          <Route path='/user' element={<User />} />
-          <Route path='/user/:id' element={<Dynamic_User />} />
-        </Routes>
-      </Router>
-    </>
-  )
+    <div>
+      <header>
+        <h1>My Shop</h1>
+        <nav>
+          <Link to="/">Home</Link> |{" "}
+          <Link to="/products">Products</Link> |{" "}
+          <Link to="/about">About</Link> |{" "}
+          <Link to="/profile" prefetch="intent">Profile</Link>
+        </nav>
+      </header>
+
+      <main>
+        <Outlet /> {/* Child routes render here */}
+      </main>
+      <footer>
+        <p>© 2025 My Shop</p>
+      </footer>
+    </div>
+  );
+}
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    children: [
+      { index: true, element: <Home /> },
+      { path: "about", element: <About /> },
+      { path: "products", element: <Products /> },
+      { path: "profile", element: <Profile />, loader: githubProfileLoader },
+    ],
+  },
+]);
+const App = () => {
+  return <RouterProvider router={router} />
+
 }
 
 export default App
