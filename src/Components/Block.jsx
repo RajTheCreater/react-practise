@@ -1,7 +1,7 @@
 import React from 'react'
 import Village from './Village'
 
-const Block = (money) => {
+const Block = ({money}) => {
     return (
         <>
             <h1>

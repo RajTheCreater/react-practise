@@ -1,7 +1,7 @@
 import React from 'react'
 import District from './District'
 
-const StateGov = (money) => {
+const StateGov = ({money}) => {
     return (
         <>
             <h1>

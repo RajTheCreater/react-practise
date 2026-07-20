@@ -2,7 +2,7 @@
 import React from 'react'
 import People from './People'
 
-const Village = (money) => {
+const Village = ({money}) => {
     return ( 
         <>
             <h1>
