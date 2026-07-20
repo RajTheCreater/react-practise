@@ -1,10 +1,10 @@
 import React from 'react'
-import People from './Components/People'
+import Index from './UseReducer/Index'
 
 const App = () => {
   return (
     <>
-      <People />
+      <Index />
     </>
   )
 }
