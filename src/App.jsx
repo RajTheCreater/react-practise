@@ -1,5 +1,5 @@
 import React from 'react'
-import Index from './UseCallback/Index'
+import Index from './UseMemo/Index'
 
 const App = () => {
   return (
