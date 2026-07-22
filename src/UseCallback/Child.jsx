@@ -8,9 +8,10 @@ const Child = ({ handleClick, counter1 }) => {
     return (
         <>
             <div>This is Child Component = {counter1}</div> 
-            <button onClick={handleClick} >Increase child counter</button>
+            <button onClick={handleClick}>
+                Increase child counter</button>
         </>
     )
 }
 
-export default Child
+export default Child 
