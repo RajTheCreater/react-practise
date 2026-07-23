@@ -1,23 +1,26 @@
-import React, { useState } from 'react'
+import React, { useRef } from 'react'
 
 const Index = () => {
-    const [bg, setbg] = useState("white");
+    const bgRef = useRef(null);
     const changeBg = () => {
         const colors = ["yellow", "pink", "blue", "orange", "purple", "black"];
-        setbg(colors[Math.floor(Math.random() * colors.length)]);
+        bgRef.current.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
     }
-    console.log(("Re - rendered Components"));
-
+    console.log("Re - rendered Components");
     return (
         <>
-            <div style={{
-                height: '100vh', backgroundColor: bg, display: "flex",
-                justifyContent: 'centre',
-                alignItems: "centre"
-            }}><button onClick={changeBg}>
-                    Change Background
-                </button>
-            </div >
+            <div
+                ref={bgRef}
+                style={{
+                    height: "100vh",
+                    // backgroundColor: ,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                }}
+            >
+                <button onClick={changeBg}>Change Background</button>
+            </div>
 
         </>
     )
